@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Register
+{% endblock title %}
+
+
+{% block content %}
+<style>
+    input{
+        margin-bottom: 10px;
+    }
+</style>
+
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <label> Username </label>
+        <br>
+        <input type="text" name="username" placeholder="Enter your username " required>
+        <br>
+        <label> Email </label>
+        <br>
+        <input type="email" name="email" placeholder="Enter your emali address" required>
+        <br>
+        <label> Password </label>
+        <br>
+        <input type="password" name='password1' placeholder="Enter your password" required>
+        <br>
+        <label> Confirm Password </label>
+        <br>
+        <input type="password" name="password2" placeholder="Confirm your password" required>
+        <br>
+        <input type="hidden" name='next' value="{{request.META.HTTP_REFERER}}">
+
+        <button type="submit"> Submit </button>
+    </form>
+
+    {% for field in register_form %}
+    {% for error in field.errors %}
+    <p style="color:red;" > {{error}} </p>
+    
+    {% endfor %}
+    
+    {% endfor %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Todo itme
+{% endblock title %}
+
+
+{% block content %}
+
+<h5><a href="{% url 'update_todo_item' todo.id %}" > Edit </a></h5>
+<h5><a href="{% url 'delete_todo_item' todo.id %}" > Delete </a></h5>
+
+
+<h1> {{todo.label}} </h1>
+<br>
+<p> {{todo.description}} </p>
+<form action="" method="POST" >
+    {% csrf_token %}
+
+    {{form.completed}}
+    <button type="submit" > Completed </button>
+</form>
+<a href="{{request.META.HTTP_REFERER}}" ><button> Back </button></a>
+
+{% endblock content %}

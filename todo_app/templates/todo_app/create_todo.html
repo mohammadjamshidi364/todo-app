@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block title %}
+todo
+{% endblock title %}
+
+{% block content %}
+
+<style>
+    div{
+        margin-bottom:10px;
+
+    }
+</style>
+<form action="" method="POST" >
+    {% csrf_token %}
+    <div class="container" > 
+    {% for field in form %}
+        <div class="create_todo" >
+        
+            <label> {{field.label}} </label>
+                {{field}}
+        
+        </div>
+    {% endfor %}
+    </div>
+    <button type="submit" > Create </button>
+</form>
+
+<a href="{{request.META.HTTP_REFERER}}" ><button> Back </button></a>
+
+
+{% endblock content %}

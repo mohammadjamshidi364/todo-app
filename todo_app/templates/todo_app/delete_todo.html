@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Delete todo item
+{% endblock title %}
+
+
+{% block content %}
+
+<form action="" method="POST" >
+    {% csrf_token %}
+    <h2> Are you sure you want to delete '<b>{{obj}}</b>' </h2>
+
+    <button type="submit" > Submit </button>
+
+</form>
+
+<a href="{{request.META.HTTP_REFERER}}" ><button> Back </button></a>
+
+{% endblock content %}
