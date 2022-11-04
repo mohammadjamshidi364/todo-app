@@ -5,18 +5,49 @@ Todo items
 {% endblock title %}
 
 {% block content %}
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
 
+    }
+
+</style>
 <div class="create_new_todo" >
     <a  class="a_todo_create" href="{% url 'new_todo_item' %}" > Create new </a>
 </div>
 
-<div class="container" >
-    {% for todo in todo_items %}
-        <div class="todo_home" >
-            <ul class="todo_home_ul" >
-                <li class="todo_home_li" ><h3 class="todo_home" ><a  class="todo_home_link" href="{% url 'show_todo_item' todo.id %}" > {{todo.label}} </a></h3></li>
+<div>
+    <a href="{% url 'create_workspace' %}" > Create Workspace </a>
+ </div>
+
+<div class="home-container" >
+
+    
+    
+    <div class="workspaces" >
+        
+        <ul>
+            {% for workspace in workspaces %}
+                <li><a  href="#" > {{workspace}} </a></li>
+            {% endfor %}
+        </ul>
+    </div>
+        <div class='todo_items' >
+            <ul>
+                {% for todo in todo_items %}
+                    <li><a href="{% url 'show_todo_item' todo.id %}" > {{todo}} </a></li>
+                {% endfor %}
             </ul>
-        <div>
-    {% endfor %}
+        </div>
+    
+    <div class="todo_completed" >
+        <ul>
+            {% for complated in todo_completed %}
+                <li><a href="{% url 'show_todo_item' complated.id %}" > {{complated}} </a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
 </div>
 {% endblock content %}
