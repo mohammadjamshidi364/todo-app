@@ -41,66 +41,45 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    
 }
 
+.workspaces{
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    min-height: 600px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
 
-.todo_home_ul{
+.workspaces ul{
     list-style-type: none;
 }
 
-.todo_home_li{
-    border: solid 2px black;
+.workspaces li a {
+    display: flex;
+    justify-content:center;
+    margin-bottom: 40px;
+}
+
+.workspace{
+    
+    margin: 10px;
+
+}
+.todo_items{
     border-radius: 20px;
-    text-decoration: none;
-    background-color: #f8ce46;
-    text-align: center;
+    margin: 10px;
     padding: 10px;
-    width: 300px;
+    text-align: center;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-.todo_home_link{
-    text-decoration: none;
-    color: #000;
-    display: block;
-    height: 30px;
+.todo_completed{
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    width: 600px;
-    margin: 10px auto;
-    background-color: #eee;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.todo_home_li:hover{
-    background-color: white;
-}
-
-/* .create_todo{
-    display: flex;
-    justify-content: center;
-    width: 600px;
-    margin: 10px auto;
-    background-color: #eee;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-} */
-
-.create_todo label{
-    display: block;
-    margin-bottom: 20px;
-}
-
-.create_todo input,
-.create_todo textarea,
-.create_todo select {
-  border: 1px solid black;
-  border-radius: 3px;
-  width: 100%;
-  font-weight: 500;
-  margin: 10px auto;
-}
